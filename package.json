@@ -1,0 +1,71 @@
+{
+  "name": "@quickcasa/eslint-config",
+  "version": "1.0.0",
+  "description": "QuickCasa's ESLint config for JavaScript and TypeScript: strict, autofixable where possible, and built for Prettier.",
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "eslint-config",
+    "flat-config",
+    "typescript",
+    "javascript",
+    "style-guide"
+  ],
+  "homepage": "https://github.com/QuickCasa/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/QuickCasa/eslint-config/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuickCasa/eslint-config.git"
+  },
+  "license": "MIT",
+  "author": "QuickCasa (https://quickcasa.ai)",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run format:check && npm run typecheck && npm test && npm run build && npm run lint"
+  },
+  "peerDependencies": {
+    "eslint": "^10.4.0",
+    "typescript": ">=4.8.4 <6.1.0"
+  },
+  "dependencies": {
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/utils": "^8.71.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-import-resolver-typescript": "^4.4.5",
+    "eslint-plugin-import-x": "^4.17.1",
+    "eslint-plugin-jsdoc": "^65.0.2",
+    "eslint-plugin-unicorn": "^77.0.0",
+    "globals": "^17.13.0",
+    "typescript-eslint": "^8.71.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@typescript-eslint/rule-tester": "^8.71.0",
+    "eslint": "^10.12.0",
+    "prettier": "^3.9.9",
+    "typescript": "~6.0.3",
+    "vitest": "^5.0.3"
+  }
+}
