@@ -43,9 +43,11 @@ build.
 
 Maintainers only.
 
-1. Update the version in `package.json`, the version in the README's install
-   command, and `CHANGELOG.md`.
+1. Update the version in `package.json` and add an entry to `CHANGELOG.md`.
 2. Commit, then tag the commit, for example `git tag v1.1.0`.
 3. Push the commit and the tag. The release workflow runs the full check,
-   creates the GitHub release with the packed tarball attached and publishes to
-   npm when an npm token is configured.
+   creates the GitHub release with the packed tarball attached and stages the
+   version on npm. npm trusts the workflow directly, so there is no npm token.
+4. Approve the staged version with 2FA. Find its id with `npm stage list`, then
+   run `npm stage approve <stage-id>`. Until then, the version isn't
+   installable.

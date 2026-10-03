@@ -10,11 +10,8 @@ and leaves formatting to Prettier.
 
 ## Install
 
-The package isn't on npm yet. Until it is, install it from the latest GitHub
-release:
-
 ```bash
-npm install --save-dev eslint typescript@~6.0.3 https://github.com/QuickCasa/eslint-config/releases/download/v1.0.0/quickcasa-eslint-config-1.0.0.tgz
+npm install --save-dev eslint typescript@~6.0.3 @quickcasa/eslint-config
 ```
 
 You need Node.js 22 or later, ESLint 10.4 or later and TypeScript 4.8.4 to
